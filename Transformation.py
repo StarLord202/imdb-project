@@ -187,19 +187,19 @@ def get_people_movies_characters(ext:Extractor) -> DataFrame:
     res = spark.sql(query)
     return res
 
-def main():
-    session = SparkSession.builder.appName("PySpark for imdb-project").getOrCreate()
-    ext = Extractor("D:\imdb-data", ["title.akas", "name.basics", "title.basics", "title.principals", "title.ratings", "title.episode"], session)
-    schemas = {"title.akas":TITLE_AKAS_SCHEMA,
-               "name.basics":NAME_BASICS_SCHEMA,
-               "title.basics":TITLE_BASICS_SCHEMA,
-               "title.principals":TITLE_PRINCIPALS_SCHEMA,
-               "title.ratings":TITLE_RATINGS_SCHEMA,
-               "title.episode":TITLE_EPISODE_SCHEMA}
-    ext.schemas = schemas
-    ext.extract_all()
-    session.stop()
+# def main():
+#     session = SparkSession.builder.appName("PySpark for imdb-project").getOrCreate()
+#     ext = Extractor("D:\imdb-data", ["title.akas", "name.basics", "title.basics", "title.principals", "title.ratings", "title.episode"], session)
+#     schemas = {"title.akas":TITLE_AKAS_SCHEMA,
+#                "name.basics":NAME_BASICS_SCHEMA,
+#                "title.basics":TITLE_BASICS_SCHEMA,
+#                "title.principals":TITLE_PRINCIPALS_SCHEMA,
+#                "title.ratings":TITLE_RATINGS_SCHEMA,
+#                "title.episode":TITLE_EPISODE_SCHEMA}
+#     ext.schemas = schemas
+#     ext.extract_all()
+#     session.stop()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
