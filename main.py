@@ -35,6 +35,7 @@ def main():
     task7: DataFrame = get_movies_by_each_decade(ext)
     task8: DataFrame = get_movies_by_genre(ext)
     save(task1, task2, task3, task4, task5, task6, task7, task8)
+    session.stop()
 
 if __name__ == '__main__':
     main()
